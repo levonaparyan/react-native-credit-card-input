@@ -50,10 +50,12 @@ const s = StyleSheet.create({
     width: INFINITE_WIDTH,
   },
   expiryInput: {
-    width: 80,
+    width: '50%',
+    paddingRight: 8
   },
   cvcInput: {
-    width: 80,
+    width: '50%',
+    paddingLeft: 8
   },
   last4Input: {
     width: 60,
@@ -169,12 +171,14 @@ export default class LiteCreditCardInput extends Component {
                 containerStyle={[s.last4Input]} />
             </View>
           </TouchableOpacity>
-          <CCInput {...this._inputProps("expiry")}
+        <View style={{flexDirection: 'row'}}>
+        <CCInput {...this._inputProps("expiry")}
             keyboardType="numeric"
             containerStyle={s.expiryInput} />
           <CCInput {...this._inputProps("cvc")}
             keyboardType="numeric"
             containerStyle={s.cvcInput} />
+        </View>
         </View>
       </View>
     );
